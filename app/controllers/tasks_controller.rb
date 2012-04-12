@@ -24,6 +24,15 @@ class TasksController < ApplicationController
     redirect_to(list_tasks_url(@list))
   end
   
+  def sms_create
+    @list = List.find(1)
+    @task = @list.tasks.new(:name => params[:Body])
+    if @task.save
+        render :text => "<Response><Sms>Your task was created.</Sms></Response>", :content_type => 'text/xml'
+    else
+        render :text => "<Response><Sms>There was an error creating your task.</Sms></Respose>", :content_type => 'text/xml'
+    end
+  end
 
   def update
     @list = List.find(params[:list_id])

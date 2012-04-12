@@ -4,6 +4,8 @@ Listr::Application.routes.draw do
     resources :tasks, :except => [:new, :edit, :show]
   end
 
+  match 'sms_create' => "tasks#sms_create", :via => :post
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
