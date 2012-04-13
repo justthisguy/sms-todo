@@ -24,6 +24,16 @@ class TasksController < ApplicationController
     redirect_to(list_tasks_url(@list))
   end
 
+  def create_sms
+    @list = List.find(1)
+    @task = @list.tasks.new(:name => params[:Body])
+    if @task.save
+      render :text => '<Response><Sms>Awesome, thanks for the tip</Sms></Response>', :content_type => "text/xml"
+    else
+      render :text => '<Response><Sms>Sad Panda :(</Sms></Response>', :content_type => 'text/xml'
+    end
+  end
+
   def update
     @list = List.find(params[:list_id])
     @task = @list.tasks.find(params[:id])
