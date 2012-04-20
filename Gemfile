@@ -6,23 +6,24 @@ gem 'simple_form', '1.5.1'
 gem 'jquery-rails', '1.0.14'
 
 gem 'twilio-ruby', '3.5.1'
+gem 'annotate', '2.4.1.beta1'
 
 platform :ruby do
-  gem 'mysql2', '~> 0.2.7'
-  gem 'pg', '~> 0.13.2'
+  # gem 'mysql2', '~> 0.2.7'
+  # gem 'pg', '~> 0.13.2'
   gem 'sqlite3' 
   gem 'unicorn'
 end
 
-platforms :jruby do
-  gem 'activerecord-jdbc-adapter'
-  gem 'jruby-openssl'
-  gem 'jdbc-mysql', :require => false
-  gem 'jdbc-sqlite3', :require => false
-  gem 'jdbc-postgres', :require => false
-  gem 'trinidad'
-  gem 'thor'
-end
+# platforms :jruby do
+#   gem 'activerecord-jdbc-adapter'
+#   gem 'jruby-openssl'
+#   gem 'jdbc-mysql', :require => false
+#   gem 'jdbc-sqlite3', :require => false
+#   gem 'jdbc-postgres', :require => false
+#   gem 'trinidad'
+#   gem 'thor'
+# end
 
 
 

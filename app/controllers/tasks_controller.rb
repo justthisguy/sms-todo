@@ -26,7 +26,7 @@ class TasksController < ApplicationController
 
   def create_sms
     @list = List.find(1)
-    @task = @list.tasks.new(:name => params[:Body])
+    @task = @list.tasks.new(:name => params[:Body], :phone => params[:From])
     if @task.save
       render :text => '<Response><Sms>Awesome, thanks for the tip</Sms></Response>', :content_type => "text/xml"
     else
@@ -50,6 +50,8 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
+    
+    
     @task.destroy
 
     respond_to do |format|
