@@ -1,3 +1,9 @@
-log/*
+.DS_Store
+.bundle
+.idea
+.rvmrc
 db/*.sqlite3
-tmp
+log/*.log
+*.log
+tmp/
+.sass-cache/
